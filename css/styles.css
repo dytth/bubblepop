@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* NỀN SÁNG VÀ MÀU SẮC THEME CHỐNG SỐC SHOPEE */
+html, body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+body.theme-pink {
+  background-color: #fff0f3;
+  background-image: radial-gradient(circle at 50% 25%, #ffffff 0%, #ffe4ea 55%, #fecdd6 100%);
+}
+
+body.theme-blue {
+  background-color: #f0f9ff;
+  background-image: radial-gradient(circle at 50% 25%, #ffffff 0%, #e0f2fe 55%, #bae6fd 100%);
+}
+
+body.theme-mint {
+  background-color: #f0fdf4;
+  background-image: radial-gradient(circle at 50% 25%, #ffffff 0%, #dcfce7 55%, #bbf7d0 100%);
+}
+
+body.theme-purple {
+  background-color: #faf5ff;
+  background-image: radial-gradient(circle at 50% 25%, #ffffff 0%, #f3e8ff 55%, #e9d5ff 100%);
+}
+
+body.theme-crystal {
+  background-color: #f8fafc;
+  background-image: radial-gradient(circle at 50% 25%, #ffffff 0%, #f1f5f9 55%, #e2e8f0 100%);
+}
+
+#bubbleCanvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+}
+
+#bubbleCanvas:active,
+body.is-panning #bubbleCanvas {
+  cursor: grabbing !important;
+}
+
+/* BẢNG CHỌN MÀU NỀN TỐI GIẢN (FLOATING THEME SELECTOR) */
+.palette-bar {
+  position: fixed;
+  bottom: 14px;
+  left: 18px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.09);
+  touch-action: auto;
+}
+
+.palette-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: var(--color-dot);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  outline: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.palette-btn:hover {
+  transform: scale(1.18);
+}
+
+.palette-btn:active {
+  transform: scale(0.92);
+}
+
+.palette-btn.is-active {
+  transform: scale(1.25);
+  border-color: #0f172a;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.95), 0 3px 8px rgba(0, 0, 0, 0.22);
+}
+
+/* HUY HIỆU GÓC MÀN HÌNH TINH TẾ */
+.badge-author {
+  position: fixed;
+  bottom: 14px;
+  right: 18px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.08);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  touch-action: auto;
+}
+
+.badge-author strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+@media (max-width: 640px) {
+  .palette-bar {
+    bottom: 12px;
+    left: 12px;
+    gap: 7px;
+    padding: 5px 8px;
+  }
+  .palette-btn {
+    width: 19px;
+    height: 19px;
+  }
+  .badge-author {
+    bottom: 12px;
+    right: 12px;
+    padding: 5px 12px;
+    font-size: 0.68rem;
+  }
+}

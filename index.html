@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BubblePop — Real Bubble Wrap</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23f43f5e' stroke='%23e11d48' stroke-width='4'/><ellipse cx='38' cy='35' rx='18' ry='10' fill='white' transform='rotate(-30 38 35)' opacity='0.9'/></svg>">
+  <link rel="stylesheet" href="css/styles.css?v=3">
+</head>
+<body class="theme-pink">
+
+  <!-- Canvas 2D siêu tốc 60fps - Tấm xốp nilon khổng lồ vô tận 360 độ -->
+  <canvas id="bubbleCanvas"></canvas>
+
+  <!-- Bảng chọn màu nilon xốp chống sốc -->
+  <div class="palette-bar" id="paletteBar" title="Đổi màu sắc bọc chống sốc">
+    <button class="palette-btn is-active" data-theme="pink" style="--color-dot:#f43f5e" title="Hồng ESD Shopee"></button>
+    <button class="palette-btn" data-theme="blue" style="--color-dot:#0284c7" title="Xanh Khí Biển"></button>
+    <button class="palette-btn" data-theme="mint" style="--color-dot:#10b981" title="Xanh Bạc Hà"></button>
+    <button class="palette-btn" data-theme="purple" style="--color-dot:#9333ea" title="Tím Pha Lê"></button>
+    <button class="palette-btn" data-theme="crystal" style="--color-dot:#94a3b8" title="Trắng Trong Suốt"></button>
+  </div>
+
+  <!-- Huy hiệu nổi cố định -->
+  <a href="https://dytth.is-a.dev" target="_blank" rel="noopener noreferrer" class="badge-author" title="Truy cập dytth.is-a.dev">
+    built by <strong>dytth_young</strong>
+  </a>
+
+  <script type="module" src="js/app.js?v=3"></script>
+</body>
+</html>
