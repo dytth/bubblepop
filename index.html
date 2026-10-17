@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>BubblePop — Real Bubble Wrap</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%23f43f5e' stroke='%23e11d48' stroke-width='4'/><ellipse cx='38' cy='35' rx='18' ry='10' fill='white' transform='rotate(-30 38 35)' opacity='0.9'/></svg>">
-  <link rel="stylesheet" href="css/styles.css?v=3">
+  <title>BubblePop</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/styles.css?v=4">
 </head>
 <body class="theme-pink">
 
@@ -21,11 +21,48 @@
     <button class="palette-btn" data-theme="crystal" style="--color-dot:#94a3b8" title="Trắng Trong Suốt"></button>
   </div>
 
-  <!-- Huy hiệu nổi cố định -->
-  <a href="https://dytth.is-a.dev" target="_blank" rel="noopener noreferrer" class="badge-author" title="Truy cập dytth.is-a.dev">
-    built by <strong>dytth_young</strong>
-  </a>
+  <!-- Thanh Footer nổi tinh tế kết hợp đổi màu theme -->
+  <footer class="app-footer" id="appFooter">
+    <button type="button" class="footer-legal-btn" id="legalBtn" title="Điều khoản & Quyền riêng tư">
+      <span class="legal-dot"></span>
+      <span class="legal-btn-text">Điều khoản & Bảo mật</span>
+    </button>
+    <span class="footer-divider">•</span>
+    <a href="https://dytth.is-a.dev" target="_blank" rel="noopener noreferrer" class="badge-author" title="Truy cập dytth.is-a.dev">
+      built by <strong>dytth_young</strong>
+    </a>
+  </footer>
 
-  <script type="module" src="js/app.js?v=3"></script>
+  <!-- Modal Điều khoản & Bảo mật (Tối giản, chuyển màu mượt mà) -->
+  <div class="legal-modal-backdrop" id="legalModal" aria-hidden="true">
+    <div class="legal-modal-card">
+      <div class="legal-modal-header">
+        <div class="legal-modal-title">
+          <span class="legal-title-dot"></span>
+          <h3>Điều khoản & Quyền riêng tư</h3>
+        </div>
+        <button type="button" class="legal-close-btn" id="closeLegalBtn" aria-label="Đóng">✕</button>
+      </div>
+      <div class="legal-modal-body">
+        <div class="legal-item">
+          <h4>Mục đích & Ý nghĩa</h4>
+          <p><strong>BubblePop</strong> là một dự án nhỏ phi lợi nhuận, được tạo ra với mong muốn đem lại cảm giác bóp nổ bọc xốp chân thực, giúp bạn xoa dịu căng thẳng, thư giãn đôi tay và tìm lại sự tập trung.</p>
+        </div>
+        <div class="legal-item">
+          <h4>Quyền riêng tư tuyệt đối</h4>
+          <p>Website hoạt động <strong>100% trên thiết bị của bạn</strong>. Chúng tôi hoàn toàn không thu thập bất kỳ dữ liệu cá nhân nào, không sử dụng cookie theo dõi và không lưu lại bất cứ thông tin nào.</p>
+        </div>
+        <div class="legal-item">
+          <h4>Trải nghiệm & Bản quyền</h4>
+          <p>Dự án được cung cấp hoàn toàn miễn phí theo nguyên trạng ("as is"). Thiết kế và mã nguồn phát triển bởi <strong>dytth_young</strong> © 2026.</p>
+        </div>
+      </div>
+      <div class="legal-modal-footer">
+        <button type="button" class="legal-confirm-btn" id="confirmLegalBtn">Đã hiểu</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js?v=4"></script>
 </body>
 </html>

@@ -395,6 +395,7 @@ class CanvasBubbleWrap {
     this.resize();
     this.bindEvents();
     this.bindPaletteEvents();
+    this.initLegalModal();
 
     try {
       const saved = localStorage.getItem('canvas_bubble_popped');
@@ -447,6 +448,55 @@ class CanvasBubbleWrap {
         if ('vibrate' in navigator) {
           try { navigator.vibrate(12); } catch (err) {}
         }
+      }
+    });
+  }
+
+  initLegalModal() {
+    const modal = document.getElementById('legalModal');
+    const openBtn = document.getElementById('legalBtn');
+    const closeBtn = document.getElementById('closeLegalBtn');
+    const confirmBtn = document.getElementById('confirmLegalBtn');
+    if (!modal || !openBtn) return;
+
+    const open = () => {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    };
+
+    const close = () => {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    };
+
+    openBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      open();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        close();
+      });
+    }
+
+    if (confirmBtn) {
+      confirmBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        close();
+      });
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        close();
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+        close();
       }
     });
   }
@@ -580,8 +630,8 @@ class CanvasBubbleWrap {
 
   bindEvents() {
     const handlePointerDown = (e) => {
-      // Bỏ qua nếu chạm vào thanh đổi màu hoặc huy hiệu tác giả
-      if (e.target.closest && (e.target.closest('.palette-bar') || e.target.closest('.badge-author'))) {
+      // Bỏ qua nếu chạm vào thanh đổi màu, footer hoặc modal điều khoản
+      if (e.target.closest && (e.target.closest('.palette-bar') || e.target.closest('.app-footer') || e.target.closest('.legal-modal-backdrop') || e.target.closest('.badge-author'))) {
         return;
       }
       if (e.pointerType === 'mouse' && e.button !== 0) return;
